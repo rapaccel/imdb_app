@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'detail_movie_bloc.dart';
+part of 'search_movies_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,99 +16,111 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$DetailMovieEvent {
+mixin _$SearchMoviesEvent {
+  String get query => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) fetch,
-    required TResult Function(MovieDetail movie) addToWatchlist,
-    required TResult Function(MovieDetail movie) removeFromWatchlist,
+    required TResult Function(String query) fetch,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? fetch,
-    TResult? Function(MovieDetail movie)? addToWatchlist,
-    TResult? Function(MovieDetail movie)? removeFromWatchlist,
+    TResult? Function(String query)? fetch,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? fetch,
-    TResult Function(MovieDetail movie)? addToWatchlist,
-    TResult Function(MovieDetail movie)? removeFromWatchlist,
+    TResult Function(String query)? fetch,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
-    required TResult Function(_AddToWatchlist value) addToWatchlist,
-    required TResult Function(_RemoveFromWatchlist value) removeFromWatchlist,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Fetch value)? fetch,
-    TResult? Function(_AddToWatchlist value)? addToWatchlist,
-    TResult? Function(_RemoveFromWatchlist value)? removeFromWatchlist,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
-    TResult Function(_AddToWatchlist value)? addToWatchlist,
-    TResult Function(_RemoveFromWatchlist value)? removeFromWatchlist,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
+
+  /// Create a copy of SearchMoviesEvent
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $SearchMoviesEventCopyWith<SearchMoviesEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DetailMovieEventCopyWith<$Res> {
-  factory $DetailMovieEventCopyWith(
-    DetailMovieEvent value,
-    $Res Function(DetailMovieEvent) then,
-  ) = _$DetailMovieEventCopyWithImpl<$Res, DetailMovieEvent>;
+abstract class $SearchMoviesEventCopyWith<$Res> {
+  factory $SearchMoviesEventCopyWith(
+    SearchMoviesEvent value,
+    $Res Function(SearchMoviesEvent) then,
+  ) = _$SearchMoviesEventCopyWithImpl<$Res, SearchMoviesEvent>;
+  @useResult
+  $Res call({String query});
 }
 
 /// @nodoc
-class _$DetailMovieEventCopyWithImpl<$Res, $Val extends DetailMovieEvent>
-    implements $DetailMovieEventCopyWith<$Res> {
-  _$DetailMovieEventCopyWithImpl(this._value, this._then);
+class _$SearchMoviesEventCopyWithImpl<$Res, $Val extends SearchMoviesEvent>
+    implements $SearchMoviesEventCopyWith<$Res> {
+  _$SearchMoviesEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DetailMovieEvent
+  /// Create a copy of SearchMoviesEvent
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({Object? query = null}) {
+    return _then(
+      _value.copyWith(
+            query: null == query
+                ? _value.query
+                : query // ignore: cast_nullable_to_non_nullable
+                      as String,
+          )
+          as $Val,
+    );
+  }
 }
 
 /// @nodoc
-abstract class _$$FetchImplCopyWith<$Res> {
+abstract class _$$FetchImplCopyWith<$Res>
+    implements $SearchMoviesEventCopyWith<$Res> {
   factory _$$FetchImplCopyWith(
     _$FetchImpl value,
     $Res Function(_$FetchImpl) then,
   ) = __$$FetchImplCopyWithImpl<$Res>;
+  @override
   @useResult
-  $Res call({int id});
+  $Res call({String query});
 }
 
 /// @nodoc
 class __$$FetchImplCopyWithImpl<$Res>
-    extends _$DetailMovieEventCopyWithImpl<$Res, _$FetchImpl>
+    extends _$SearchMoviesEventCopyWithImpl<$Res, _$FetchImpl>
     implements _$$FetchImplCopyWith<$Res> {
   __$$FetchImplCopyWithImpl(
     _$FetchImpl _value,
     $Res Function(_$FetchImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieEvent
+  /// Create a copy of SearchMoviesEvent
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({Object? id = null}) {
+  $Res call({Object? query = null}) {
     return _then(
       _$FetchImpl(
-        null == id
-            ? _value.id
-            : id // ignore: cast_nullable_to_non_nullable
-                  as int,
+        null == query
+            ? _value.query
+            : query // ignore: cast_nullable_to_non_nullable
+                  as String,
       ),
     );
   }
@@ -117,14 +129,14 @@ class __$$FetchImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FetchImpl implements _Fetch {
-  const _$FetchImpl(this.id);
+  const _$FetchImpl(this.query);
 
   @override
-  final int id;
+  final String query;
 
   @override
   String toString() {
-    return 'DetailMovieEvent.fetch(id: $id)';
+    return 'SearchMoviesEvent.fetch(query: $query)';
   }
 
   @override
@@ -132,13 +144,13 @@ class _$FetchImpl implements _Fetch {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FetchImpl &&
-            (identical(other.id, id) || other.id == id));
+            (identical(other.query, query) || other.query == query));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, id);
+  int get hashCode => Object.hash(runtimeType, query);
 
-  /// Create a copy of DetailMovieEvent
+  /// Create a copy of SearchMoviesEvent
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -149,33 +161,27 @@ class _$FetchImpl implements _Fetch {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int id) fetch,
-    required TResult Function(MovieDetail movie) addToWatchlist,
-    required TResult Function(MovieDetail movie) removeFromWatchlist,
+    required TResult Function(String query) fetch,
   }) {
-    return fetch(id);
+    return fetch(query);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? fetch,
-    TResult? Function(MovieDetail movie)? addToWatchlist,
-    TResult? Function(MovieDetail movie)? removeFromWatchlist,
+    TResult? Function(String query)? fetch,
   }) {
-    return fetch?.call(id);
+    return fetch?.call(query);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? fetch,
-    TResult Function(MovieDetail movie)? addToWatchlist,
-    TResult Function(MovieDetail movie)? removeFromWatchlist,
+    TResult Function(String query)? fetch,
     required TResult orElse(),
   }) {
     if (fetch != null) {
-      return fetch(id);
+      return fetch(query);
     }
     return orElse();
   }
@@ -184,8 +190,6 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Fetch value) fetch,
-    required TResult Function(_AddToWatchlist value) addToWatchlist,
-    required TResult Function(_RemoveFromWatchlist value) removeFromWatchlist,
   }) {
     return fetch(this);
   }
@@ -194,8 +198,6 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Fetch value)? fetch,
-    TResult? Function(_AddToWatchlist value)? addToWatchlist,
-    TResult? Function(_RemoveFromWatchlist value)? removeFromWatchlist,
   }) {
     return fetch?.call(this);
   }
@@ -204,8 +206,6 @@ class _$FetchImpl implements _Fetch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Fetch value)? fetch,
-    TResult Function(_AddToWatchlist value)? addToWatchlist,
-    TResult Function(_RemoveFromWatchlist value)? removeFromWatchlist,
     required TResult orElse(),
   }) {
     if (fetch != null) {
@@ -215,333 +215,27 @@ class _$FetchImpl implements _Fetch {
   }
 }
 
-abstract class _Fetch implements DetailMovieEvent {
-  const factory _Fetch(final int id) = _$FetchImpl;
+abstract class _Fetch implements SearchMoviesEvent {
+  const factory _Fetch(final String query) = _$FetchImpl;
 
-  int get id;
+  @override
+  String get query;
 
-  /// Create a copy of DetailMovieEvent
+  /// Create a copy of SearchMoviesEvent
   /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FetchImplCopyWith<_$FetchImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$AddToWatchlistImplCopyWith<$Res> {
-  factory _$$AddToWatchlistImplCopyWith(
-    _$AddToWatchlistImpl value,
-    $Res Function(_$AddToWatchlistImpl) then,
-  ) = __$$AddToWatchlistImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({MovieDetail movie});
-}
-
-/// @nodoc
-class __$$AddToWatchlistImplCopyWithImpl<$Res>
-    extends _$DetailMovieEventCopyWithImpl<$Res, _$AddToWatchlistImpl>
-    implements _$$AddToWatchlistImplCopyWith<$Res> {
-  __$$AddToWatchlistImplCopyWithImpl(
-    _$AddToWatchlistImpl _value,
-    $Res Function(_$AddToWatchlistImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? movie = null}) {
-    return _then(
-      _$AddToWatchlistImpl(
-        null == movie
-            ? _value.movie
-            : movie // ignore: cast_nullable_to_non_nullable
-                  as MovieDetail,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$AddToWatchlistImpl implements _AddToWatchlist {
-  const _$AddToWatchlistImpl(this.movie);
-
-  @override
-  final MovieDetail movie;
-
-  @override
-  String toString() {
-    return 'DetailMovieEvent.addToWatchlist(movie: $movie)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$AddToWatchlistImpl &&
-            (identical(other.movie, movie) || other.movie == movie));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, movie);
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$AddToWatchlistImplCopyWith<_$AddToWatchlistImpl> get copyWith =>
-      __$$AddToWatchlistImplCopyWithImpl<_$AddToWatchlistImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(int id) fetch,
-    required TResult Function(MovieDetail movie) addToWatchlist,
-    required TResult Function(MovieDetail movie) removeFromWatchlist,
-  }) {
-    return addToWatchlist(movie);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? fetch,
-    TResult? Function(MovieDetail movie)? addToWatchlist,
-    TResult? Function(MovieDetail movie)? removeFromWatchlist,
-  }) {
-    return addToWatchlist?.call(movie);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? fetch,
-    TResult Function(MovieDetail movie)? addToWatchlist,
-    TResult Function(MovieDetail movie)? removeFromWatchlist,
-    required TResult orElse(),
-  }) {
-    if (addToWatchlist != null) {
-      return addToWatchlist(movie);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Fetch value) fetch,
-    required TResult Function(_AddToWatchlist value) addToWatchlist,
-    required TResult Function(_RemoveFromWatchlist value) removeFromWatchlist,
-  }) {
-    return addToWatchlist(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Fetch value)? fetch,
-    TResult? Function(_AddToWatchlist value)? addToWatchlist,
-    TResult? Function(_RemoveFromWatchlist value)? removeFromWatchlist,
-  }) {
-    return addToWatchlist?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Fetch value)? fetch,
-    TResult Function(_AddToWatchlist value)? addToWatchlist,
-    TResult Function(_RemoveFromWatchlist value)? removeFromWatchlist,
-    required TResult orElse(),
-  }) {
-    if (addToWatchlist != null) {
-      return addToWatchlist(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _AddToWatchlist implements DetailMovieEvent {
-  const factory _AddToWatchlist(final MovieDetail movie) = _$AddToWatchlistImpl;
-
-  MovieDetail get movie;
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$AddToWatchlistImplCopyWith<_$AddToWatchlistImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$RemoveFromWatchlistImplCopyWith<$Res> {
-  factory _$$RemoveFromWatchlistImplCopyWith(
-    _$RemoveFromWatchlistImpl value,
-    $Res Function(_$RemoveFromWatchlistImpl) then,
-  ) = __$$RemoveFromWatchlistImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({MovieDetail movie});
-}
-
-/// @nodoc
-class __$$RemoveFromWatchlistImplCopyWithImpl<$Res>
-    extends _$DetailMovieEventCopyWithImpl<$Res, _$RemoveFromWatchlistImpl>
-    implements _$$RemoveFromWatchlistImplCopyWith<$Res> {
-  __$$RemoveFromWatchlistImplCopyWithImpl(
-    _$RemoveFromWatchlistImpl _value,
-    $Res Function(_$RemoveFromWatchlistImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({Object? movie = null}) {
-    return _then(
-      _$RemoveFromWatchlistImpl(
-        null == movie
-            ? _value.movie
-            : movie // ignore: cast_nullable_to_non_nullable
-                  as MovieDetail,
-      ),
-    );
-  }
-}
-
-/// @nodoc
-
-class _$RemoveFromWatchlistImpl implements _RemoveFromWatchlist {
-  const _$RemoveFromWatchlistImpl(this.movie);
-
-  @override
-  final MovieDetail movie;
-
-  @override
-  String toString() {
-    return 'DetailMovieEvent.removeFromWatchlist(movie: $movie)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$RemoveFromWatchlistImpl &&
-            (identical(other.movie, movie) || other.movie == movie));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, movie);
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$RemoveFromWatchlistImplCopyWith<_$RemoveFromWatchlistImpl> get copyWith =>
-      __$$RemoveFromWatchlistImplCopyWithImpl<_$RemoveFromWatchlistImpl>(
-        this,
-        _$identity,
-      );
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(int id) fetch,
-    required TResult Function(MovieDetail movie) addToWatchlist,
-    required TResult Function(MovieDetail movie) removeFromWatchlist,
-  }) {
-    return removeFromWatchlist(movie);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int id)? fetch,
-    TResult? Function(MovieDetail movie)? addToWatchlist,
-    TResult? Function(MovieDetail movie)? removeFromWatchlist,
-  }) {
-    return removeFromWatchlist?.call(movie);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int id)? fetch,
-    TResult Function(MovieDetail movie)? addToWatchlist,
-    TResult Function(MovieDetail movie)? removeFromWatchlist,
-    required TResult orElse(),
-  }) {
-    if (removeFromWatchlist != null) {
-      return removeFromWatchlist(movie);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Fetch value) fetch,
-    required TResult Function(_AddToWatchlist value) addToWatchlist,
-    required TResult Function(_RemoveFromWatchlist value) removeFromWatchlist,
-  }) {
-    return removeFromWatchlist(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Fetch value)? fetch,
-    TResult? Function(_AddToWatchlist value)? addToWatchlist,
-    TResult? Function(_RemoveFromWatchlist value)? removeFromWatchlist,
-  }) {
-    return removeFromWatchlist?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Fetch value)? fetch,
-    TResult Function(_AddToWatchlist value)? addToWatchlist,
-    TResult Function(_RemoveFromWatchlist value)? removeFromWatchlist,
-    required TResult orElse(),
-  }) {
-    if (removeFromWatchlist != null) {
-      return removeFromWatchlist(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RemoveFromWatchlist implements DetailMovieEvent {
-  const factory _RemoveFromWatchlist(final MovieDetail movie) =
-      _$RemoveFromWatchlistImpl;
-
-  MovieDetail get movie;
-
-  /// Create a copy of DetailMovieEvent
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$RemoveFromWatchlistImplCopyWith<_$RemoveFromWatchlistImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$DetailMovieState {
+mixin _$SearchMoviesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) => throw _privateConstructorUsedError;
@@ -549,12 +243,7 @@ mixin _$DetailMovieState {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) => throw _privateConstructorUsedError;
@@ -562,12 +251,7 @@ mixin _$DetailMovieState {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -600,24 +284,24 @@ mixin _$DetailMovieState {
 }
 
 /// @nodoc
-abstract class $DetailMovieStateCopyWith<$Res> {
-  factory $DetailMovieStateCopyWith(
-    DetailMovieState value,
-    $Res Function(DetailMovieState) then,
-  ) = _$DetailMovieStateCopyWithImpl<$Res, DetailMovieState>;
+abstract class $SearchMoviesStateCopyWith<$Res> {
+  factory $SearchMoviesStateCopyWith(
+    SearchMoviesState value,
+    $Res Function(SearchMoviesState) then,
+  ) = _$SearchMoviesStateCopyWithImpl<$Res, SearchMoviesState>;
 }
 
 /// @nodoc
-class _$DetailMovieStateCopyWithImpl<$Res, $Val extends DetailMovieState>
-    implements $DetailMovieStateCopyWith<$Res> {
-  _$DetailMovieStateCopyWithImpl(this._value, this._then);
+class _$SearchMoviesStateCopyWithImpl<$Res, $Val extends SearchMoviesState>
+    implements $SearchMoviesStateCopyWith<$Res> {
+  _$SearchMoviesStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -631,14 +315,14 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$DetailMovieStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$SearchMoviesStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
     _$InitialImpl _value,
     $Res Function(_$InitialImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -649,7 +333,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'DetailMovieState.initial()';
+    return 'SearchMoviesState.initial()';
   }
 
   @override
@@ -666,12 +350,7 @@ class _$InitialImpl implements _Initial {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -683,12 +362,7 @@ class _$InitialImpl implements _Initial {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -700,12 +374,7 @@ class _$InitialImpl implements _Initial {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -757,7 +426,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements DetailMovieState {
+abstract class _Initial implements SearchMoviesState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -771,14 +440,14 @@ abstract class _$$LoadingImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$DetailMovieStateCopyWithImpl<$Res, _$LoadingImpl>
+    extends _$SearchMoviesStateCopyWithImpl<$Res, _$LoadingImpl>
     implements _$$LoadingImplCopyWith<$Res> {
   __$$LoadingImplCopyWithImpl(
     _$LoadingImpl _value,
     $Res Function(_$LoadingImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -789,7 +458,7 @@ class _$LoadingImpl implements _Loading {
 
   @override
   String toString() {
-    return 'DetailMovieState.loading()';
+    return 'SearchMoviesState.loading()';
   }
 
   @override
@@ -806,12 +475,7 @@ class _$LoadingImpl implements _Loading {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -823,12 +487,7 @@ class _$LoadingImpl implements _Loading {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -840,12 +499,7 @@ class _$LoadingImpl implements _Loading {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -897,7 +551,7 @@ class _$LoadingImpl implements _Loading {
   }
 }
 
-abstract class _Loading implements DetailMovieState {
+abstract class _Loading implements SearchMoviesState {
   const factory _Loading() = _$LoadingImpl;
 }
 
@@ -908,45 +562,29 @@ abstract class _$$LoadedImplCopyWith<$Res> {
     $Res Function(_$LoadedImpl) then,
   ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({
-    MovieDetail movies,
-    List<Movie> recommendations,
-    bool isAddedToWatchlist,
-  });
+  $Res call({List<Movie> movies});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$DetailMovieStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$SearchMoviesStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
     _$LoadedImpl _value,
     $Res Function(_$LoadedImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? movies = null,
-    Object? recommendations = null,
-    Object? isAddedToWatchlist = null,
-  }) {
+  $Res call({Object? movies = null}) {
     return _then(
       _$LoadedImpl(
-        movies: null == movies
-            ? _value.movies
+        null == movies
+            ? _value._movies
             : movies // ignore: cast_nullable_to_non_nullable
-                  as MovieDetail,
-        recommendations: null == recommendations
-            ? _value._recommendations
-            : recommendations // ignore: cast_nullable_to_non_nullable
                   as List<Movie>,
-        isAddedToWatchlist: null == isAddedToWatchlist
-            ? _value.isAddedToWatchlist
-            : isAddedToWatchlist // ignore: cast_nullable_to_non_nullable
-                  as bool,
       ),
     );
   }
@@ -955,28 +593,19 @@ class __$$LoadedImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoadedImpl implements _Loaded {
-  const _$LoadedImpl({
-    required this.movies,
-    required final List<Movie> recommendations,
-    required this.isAddedToWatchlist,
-  }) : _recommendations = recommendations;
+  const _$LoadedImpl(final List<Movie> movies) : _movies = movies;
 
+  final List<Movie> _movies;
   @override
-  final MovieDetail movies;
-  final List<Movie> _recommendations;
-  @override
-  List<Movie> get recommendations {
-    if (_recommendations is EqualUnmodifiableListView) return _recommendations;
+  List<Movie> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_recommendations);
+    return EqualUnmodifiableListView(_movies);
   }
 
   @override
-  final bool isAddedToWatchlist;
-
-  @override
   String toString() {
-    return 'DetailMovieState.loaded(movies: $movies, recommendations: $recommendations, isAddedToWatchlist: $isAddedToWatchlist)';
+    return 'SearchMoviesState.loaded(movies: $movies)';
   }
 
   @override
@@ -984,24 +613,14 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            (identical(other.movies, movies) || other.movies == movies) &&
-            const DeepCollectionEquality().equals(
-              other._recommendations,
-              _recommendations,
-            ) &&
-            (identical(other.isAddedToWatchlist, isAddedToWatchlist) ||
-                other.isAddedToWatchlist == isAddedToWatchlist));
+            const DeepCollectionEquality().equals(other._movies, _movies));
   }
 
   @override
-  int get hashCode => Object.hash(
-    runtimeType,
-    movies,
-    const DeepCollectionEquality().hash(_recommendations),
-    isAddedToWatchlist,
-  );
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_movies));
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1014,16 +633,11 @@ class _$LoadedImpl implements _Loaded {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
-    return loaded(movies, recommendations, isAddedToWatchlist);
+    return loaded(movies);
   }
 
   @override
@@ -1031,16 +645,11 @@ class _$LoadedImpl implements _Loaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
-    return loaded?.call(movies, recommendations, isAddedToWatchlist);
+    return loaded?.call(movies);
   }
 
   @override
@@ -1048,18 +657,13 @@ class _$LoadedImpl implements _Loaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(movies, recommendations, isAddedToWatchlist);
+      return loaded(movies);
     }
     return orElse();
   }
@@ -1105,18 +709,12 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements DetailMovieState {
-  const factory _Loaded({
-    required final MovieDetail movies,
-    required final List<Movie> recommendations,
-    required final bool isAddedToWatchlist,
-  }) = _$LoadedImpl;
+abstract class _Loaded implements SearchMoviesState {
+  const factory _Loaded(final List<Movie> movies) = _$LoadedImpl;
 
-  MovieDetail get movies;
-  List<Movie> get recommendations;
-  bool get isAddedToWatchlist;
+  List<Movie> get movies;
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -1135,14 +733,14 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$DetailMovieStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$SearchMoviesStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
     _$ErrorImpl _value,
     $Res Function(_$ErrorImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -1168,7 +766,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'DetailMovieState.error(message: $message)';
+    return 'SearchMoviesState.error(message: $message)';
   }
 
   @override
@@ -1182,7 +780,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -1195,12 +793,7 @@ class _$ErrorImpl implements _Error {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -1212,12 +805,7 @@ class _$ErrorImpl implements _Error {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -1229,12 +817,7 @@ class _$ErrorImpl implements _Error {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1286,12 +869,12 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements DetailMovieState {
+abstract class _Error implements SearchMoviesState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -1308,14 +891,14 @@ abstract class _$$EmptyImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmptyImplCopyWithImpl<$Res>
-    extends _$DetailMovieStateCopyWithImpl<$Res, _$EmptyImpl>
+    extends _$SearchMoviesStateCopyWithImpl<$Res, _$EmptyImpl>
     implements _$$EmptyImplCopyWith<$Res> {
   __$$EmptyImplCopyWithImpl(
     _$EmptyImpl _value,
     $Res Function(_$EmptyImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of DetailMovieState
+  /// Create a copy of SearchMoviesState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -1326,7 +909,7 @@ class _$EmptyImpl implements _Empty {
 
   @override
   String toString() {
-    return 'DetailMovieState.empty()';
+    return 'SearchMoviesState.empty()';
   }
 
   @override
@@ -1343,12 +926,7 @@ class _$EmptyImpl implements _Empty {
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
     required TResult Function() loading,
-    required TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -1360,12 +938,7 @@ class _$EmptyImpl implements _Empty {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
     TResult? Function()? loading,
-    TResult? Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -1377,12 +950,7 @@ class _$EmptyImpl implements _Empty {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? loading,
-    TResult Function(
-      MovieDetail movies,
-      List<Movie> recommendations,
-      bool isAddedToWatchlist,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1434,6 +1002,6 @@ class _$EmptyImpl implements _Empty {
   }
 }
 
-abstract class _Empty implements DetailMovieState {
+abstract class _Empty implements SearchMoviesState {
   const factory _Empty() = _$EmptyImpl;
 }

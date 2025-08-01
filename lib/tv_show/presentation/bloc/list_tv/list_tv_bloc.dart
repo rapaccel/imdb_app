@@ -18,7 +18,6 @@ class ListTvBloc extends Bloc<ListTvEvent, ListTvState> {
     on<ListTvEvent>((event, emit) async {
       await event.map(
         fetch: (e) async {
-          emit(_Loading());
           final popularResult = await getPopularTv.execute();
           final topRatedResult = await getTopRatedTv.execute();
           final onAirResult = await getOnAirTv.execute();

@@ -26,25 +26,12 @@ class ListMovieBloc extends Bloc<ListMovieEvent, ListMovieState> {
           final popularResult = await getPopularMovies.execute();
           final topRatedResult = await getTopRatedMovies.execute();
 
-          nowPlayingResult.fold(
-            (failure) => emit(ListMovieState.failure(failure.message)),
-            (nowPlaying) {
-              popularResult.fold(
-                (failure) => emit(ListMovieState.failure(failure.message)),
-                (popular) {
-                  topRatedResult.fold(
-                    (failure) => emit(ListMovieState.failure(failure.message)),
-                    (topRated) => emit(
-                      ListMovieState.success(
-                        nowPlaying: nowPlaying,
-                        popular: popular,
-                        topRated: topRated,
-                      ),
-                    ),
-                  );
-                },
-              );
-            },
+          emit(
+            ListMovieState.success(
+              nowPlaying: nowPlayingResult.getOrElse(() => []),
+              popular: popularResult.getOrElse(() => []),
+              topRated: topRatedResult.getOrElse(() => []),
+            ),
           );
         },
       );

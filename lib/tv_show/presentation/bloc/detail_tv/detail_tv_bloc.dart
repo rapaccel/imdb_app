@@ -4,6 +4,7 @@ import 'package:imdb_app/tv_show/domain/entities/tv_show.dart';
 import 'package:imdb_app/tv_show/domain/entities/tv_show_detail.dart';
 import 'package:imdb_app/tv_show/domain/useCases/get_tv_detail.dart';
 import 'package:imdb_app/tv_show/domain/useCases/get_tv_recommendation.dart';
+import 'package:imdb_app/tv_show/domain/useCases/get_watch_list_status.dart';
 import 'package:imdb_app/tv_show/domain/useCases/remove_watch_list.dart';
 import 'package:imdb_app/tv_show/domain/useCases/save_watch_list.dart';
 
@@ -16,59 +17,61 @@ class DetailTvBloc extends Bloc<DetailTvEvent, DetailTvState> {
   final SaveWatchListTv saveWatchListTv;
   final RemoveWatchListTv removeWatchListTv;
   final GetTvRecommendation getTvRecommendation;
+  final GetWatchListStatusTv getWatchlistStatus;
+
   DetailTvBloc(
     this.getTvDetail,
     this.saveWatchListTv,
     this.removeWatchListTv,
     this.getTvRecommendation,
-  ) : super(_Initial()) {
+    this.getWatchlistStatus,
+  ) : super(const DetailTvState.initial()) {
     on<DetailTvEvent>((event, emit) async {
-      await event.map(
-        fetch: (e) async {
-          emit(_Loading());
-          final result = await getTvDetail.execute(e.id);
-          result.fold((failure) => emit(_Error(failure.message)), (
-            tvDetail,
-          ) async {
-            final recommendationsResult = await getTvRecommendation.execute(
-              e.id,
-            );
-            recommendationsResult.fold(
-              (failure) => emit(_Error(failure.message)),
-              (recommendations) {
-                emit(
-                  _Loaded(
-                    tvDetail: tvDetail,
-                    recommendations: recommendations,
-                    isAddedToWatchlist: false,
-                  ),
-                );
-              },
-            );
+      await event.when(
+        fetch: (id) async {
+          emit(const DetailTvState.loading());
+          final detailResult = await getTvDetail.execute(id);
+          final recommendationsResult = await getTvRecommendation.execute(id);
+          final watchlistStatus = await getWatchlistStatus.execute(id);
+
+          detailResult.fold(
+            (failure) => emit(DetailTvState.error(failure.message)),
+            (tvDetail) {
+              recommendationsResult.fold(
+                (failure) => emit(DetailTvState.error(failure.message)),
+                (recommendations) {
+                  emit(
+                    DetailTvState.loaded(
+                      tvDetail: tvDetail,
+                      recommendations: recommendations,
+                      isAddedToWatchlist: watchlistStatus,
+                    ),
+                  );
+                },
+              );
+            },
+          );
+        },
+        addToWatchlist: (tv) async {
+          final result = await saveWatchListTv.execute(tv);
+          result.fold((failure) => emit(DetailTvState.error(failure.message)), (
+            _,
+          ) {
+            final currentState = state;
+            if (currentState is _Loaded) {
+              emit(currentState.copyWith(isAddedToWatchlist: true));
+            }
           });
         },
-        addToWatchlist: (e) async {
-          final result = await saveWatchListTv.execute(e.tv);
-          result.fold((failure) => emit(_Error(failure.message)), (_) {
-            emit(
-              _Loaded(
-                tvDetail: e.tv,
-                recommendations: [],
-                isAddedToWatchlist: true,
-              ),
-            );
-          });
-        },
-        removeFromWatchlist: (e) async {
-          final result = await removeWatchListTv.execute(e.tv);
-          result.fold((failure) => emit(_Error(failure.message)), (_) {
-            emit(
-              _Loaded(
-                tvDetail: e.tv,
-                recommendations: [],
-                isAddedToWatchlist: false,
-              ),
-            );
+        removeFromWatchlist: (tv) async {
+          final result = await removeWatchListTv.execute(tv);
+          result.fold((failure) => emit(DetailTvState.error(failure.message)), (
+            _,
+          ) {
+            final currentState = state;
+            if (currentState is _Loaded) {
+              emit(currentState.copyWith(isAddedToWatchlist: false));
+            }
           });
         },
       );

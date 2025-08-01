@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'list_tv_bloc.dart';
+part of 'watch_list_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -16,90 +16,92 @@ final _privateConstructorUsedError = UnsupportedError(
 );
 
 /// @nodoc
-mixin _$ListTvEvent {
+mixin _$WatchListEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({required TResult Function() fetch}) =>
-      throw _privateConstructorUsedError;
+  TResult when<TResult extends Object?>({
+    required TResult Function() getData,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? fetch}) =>
-      throw _privateConstructorUsedError;
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? getData,
+  }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function()? getData,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Fetch value) fetch,
+    required TResult Function(_GetData value) getData,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_GetData value)? getData,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Fetch value)? fetch,
+    TResult Function(_GetData value)? getData,
     required TResult orElse(),
   }) => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $ListTvEventCopyWith<$Res> {
-  factory $ListTvEventCopyWith(
-    ListTvEvent value,
-    $Res Function(ListTvEvent) then,
-  ) = _$ListTvEventCopyWithImpl<$Res, ListTvEvent>;
+abstract class $WatchListEventCopyWith<$Res> {
+  factory $WatchListEventCopyWith(
+    WatchListEvent value,
+    $Res Function(WatchListEvent) then,
+  ) = _$WatchListEventCopyWithImpl<$Res, WatchListEvent>;
 }
 
 /// @nodoc
-class _$ListTvEventCopyWithImpl<$Res, $Val extends ListTvEvent>
-    implements $ListTvEventCopyWith<$Res> {
-  _$ListTvEventCopyWithImpl(this._value, this._then);
+class _$WatchListEventCopyWithImpl<$Res, $Val extends WatchListEvent>
+    implements $WatchListEventCopyWith<$Res> {
+  _$WatchListEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ListTvEvent
+  /// Create a copy of WatchListEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
-abstract class _$$FetchImplCopyWith<$Res> {
-  factory _$$FetchImplCopyWith(
-    _$FetchImpl value,
-    $Res Function(_$FetchImpl) then,
-  ) = __$$FetchImplCopyWithImpl<$Res>;
+abstract class _$$GetDataImplCopyWith<$Res> {
+  factory _$$GetDataImplCopyWith(
+    _$GetDataImpl value,
+    $Res Function(_$GetDataImpl) then,
+  ) = __$$GetDataImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchImplCopyWithImpl<$Res>
-    extends _$ListTvEventCopyWithImpl<$Res, _$FetchImpl>
-    implements _$$FetchImplCopyWith<$Res> {
-  __$$FetchImplCopyWithImpl(
-    _$FetchImpl _value,
-    $Res Function(_$FetchImpl) _then,
+class __$$GetDataImplCopyWithImpl<$Res>
+    extends _$WatchListEventCopyWithImpl<$Res, _$GetDataImpl>
+    implements _$$GetDataImplCopyWith<$Res> {
+  __$$GetDataImplCopyWithImpl(
+    _$GetDataImpl _value,
+    $Res Function(_$GetDataImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ListTvEvent
+  /// Create a copy of WatchListEvent
   /// with the given fields replaced by the non-null parameter values.
 }
 
 /// @nodoc
 
-class _$FetchImpl implements _Fetch {
-  const _$FetchImpl();
+class _$GetDataImpl implements _GetData {
+  const _$GetDataImpl();
 
   @override
   String toString() {
-    return 'ListTvEvent.fetch()';
+    return 'WatchListEvent.getData()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$FetchImpl);
+        (other.runtimeType == runtimeType && other is _$GetDataImpl);
   }
 
   @override
@@ -107,24 +109,24 @@ class _$FetchImpl implements _Fetch {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object?>({required TResult Function() fetch}) {
-    return fetch();
+  TResult when<TResult extends Object?>({required TResult Function() getData}) {
+    return getData();
   }
 
   @override
   @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? fetch}) {
-    return fetch?.call();
+  TResult? whenOrNull<TResult extends Object?>({TResult? Function()? getData}) {
+    return getData?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? fetch,
+    TResult Function()? getData,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch();
+    if (getData != null) {
+      return getData();
     }
     return orElse();
   }
@@ -132,74 +134,56 @@ class _$FetchImpl implements _Fetch {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Fetch value) fetch,
+    required TResult Function(_GetData value) getData,
   }) {
-    return fetch(this);
+    return getData(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Fetch value)? fetch,
+    TResult? Function(_GetData value)? getData,
   }) {
-    return fetch?.call(this);
+    return getData?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Fetch value)? fetch,
+    TResult Function(_GetData value)? getData,
     required TResult orElse(),
   }) {
-    if (fetch != null) {
-      return fetch(this);
+    if (getData != null) {
+      return getData(this);
     }
     return orElse();
   }
 }
 
-abstract class _Fetch implements ListTvEvent {
-  const factory _Fetch() = _$FetchImpl;
+abstract class _GetData implements WatchListEvent {
+  const factory _GetData() = _$GetDataImpl;
 }
 
 /// @nodoc
-mixin _$ListTvState {
+mixin _$WatchListState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies, List<TvShow> tvShows) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) => throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -207,7 +191,6 @@ mixin _$ListTvState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
@@ -215,7 +198,6 @@ mixin _$ListTvState {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
@@ -223,7 +205,6 @@ mixin _$ListTvState {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
@@ -232,24 +213,24 @@ mixin _$ListTvState {
 }
 
 /// @nodoc
-abstract class $ListTvStateCopyWith<$Res> {
-  factory $ListTvStateCopyWith(
-    ListTvState value,
-    $Res Function(ListTvState) then,
-  ) = _$ListTvStateCopyWithImpl<$Res, ListTvState>;
+abstract class $WatchListStateCopyWith<$Res> {
+  factory $WatchListStateCopyWith(
+    WatchListState value,
+    $Res Function(WatchListState) then,
+  ) = _$WatchListStateCopyWithImpl<$Res, WatchListState>;
 }
 
 /// @nodoc
-class _$ListTvStateCopyWithImpl<$Res, $Val extends ListTvState>
-    implements $ListTvStateCopyWith<$Res> {
-  _$ListTvStateCopyWithImpl(this._value, this._then);
+class _$WatchListStateCopyWithImpl<$Res, $Val extends WatchListState>
+    implements $WatchListStateCopyWith<$Res> {
+  _$WatchListStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -263,14 +244,14 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$ListTvStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$WatchListStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
     _$InitialImpl _value,
     $Res Function(_$InitialImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -281,7 +262,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'ListTvState.initial()';
+    return 'WatchListState.initial()';
   }
 
   @override
@@ -297,13 +278,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies, List<TvShow> tvShows) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -314,13 +289,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -331,13 +300,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -352,7 +315,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
@@ -364,7 +326,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
@@ -376,7 +337,6 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
@@ -389,148 +349,8 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements ListTvState {
+abstract class _Initial implements WatchListState {
   const factory _Initial() = _$InitialImpl;
-}
-
-/// @nodoc
-abstract class _$$LoadingImplCopyWith<$Res> {
-  factory _$$LoadingImplCopyWith(
-    _$LoadingImpl value,
-    $Res Function(_$LoadingImpl) then,
-  ) = __$$LoadingImplCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$LoadingImplCopyWithImpl<$Res>
-    extends _$ListTvStateCopyWithImpl<$Res, _$LoadingImpl>
-    implements _$$LoadingImplCopyWith<$Res> {
-  __$$LoadingImplCopyWithImpl(
-    _$LoadingImpl _value,
-    $Res Function(_$LoadingImpl) _then,
-  ) : super(_value, _then);
-
-  /// Create a copy of ListTvState
-  /// with the given fields replaced by the non-null parameter values.
-}
-
-/// @nodoc
-
-class _$LoadingImpl implements _Loading {
-  const _$LoadingImpl();
-
-  @override
-  String toString() {
-    return 'ListTvState.loading()';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$LoadingImpl);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
-    required TResult Function(String message) error,
-    required TResult Function() empty,
-  }) {
-    return loading();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
-    TResult? Function(String message)? error,
-    TResult? Function()? empty,
-  }) {
-    return loading?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
-    TResult Function(String message)? error,
-    TResult Function()? empty,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
-    required TResult Function(_Loaded value) loaded,
-    required TResult Function(_Error value) error,
-    required TResult Function(_Empty value) empty,
-  }) {
-    return loading(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
-    TResult? Function(_Loaded value)? loaded,
-    TResult? Function(_Error value)? error,
-    TResult? Function(_Empty value)? empty,
-  }) {
-    return loading?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
-    TResult Function(_Empty value)? empty,
-    required TResult orElse(),
-  }) {
-    if (loading != null) {
-      return loading(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Loading implements ListTvState {
-  const factory _Loading() = _$LoadingImpl;
 }
 
 /// @nodoc
@@ -540,44 +360,32 @@ abstract class _$$LoadedImplCopyWith<$Res> {
     $Res Function(_$LoadedImpl) then,
   ) = __$$LoadedImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({
-    List<TvShow> tvShows,
-    List<TvShow> popularTvShows,
-    List<TvShow> topRatedTvShows,
-  });
+  $Res call({List<Movie> movies, List<TvShow> tvShows});
 }
 
 /// @nodoc
 class __$$LoadedImplCopyWithImpl<$Res>
-    extends _$ListTvStateCopyWithImpl<$Res, _$LoadedImpl>
+    extends _$WatchListStateCopyWithImpl<$Res, _$LoadedImpl>
     implements _$$LoadedImplCopyWith<$Res> {
   __$$LoadedImplCopyWithImpl(
     _$LoadedImpl _value,
     $Res Function(_$LoadedImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? tvShows = null,
-    Object? popularTvShows = null,
-    Object? topRatedTvShows = null,
-  }) {
+  $Res call({Object? movies = null, Object? tvShows = null}) {
     return _then(
       _$LoadedImpl(
+        movies: null == movies
+            ? _value._movies
+            : movies // ignore: cast_nullable_to_non_nullable
+                  as List<Movie>,
         tvShows: null == tvShows
             ? _value._tvShows
             : tvShows // ignore: cast_nullable_to_non_nullable
-                  as List<TvShow>,
-        popularTvShows: null == popularTvShows
-            ? _value._popularTvShows
-            : popularTvShows // ignore: cast_nullable_to_non_nullable
-                  as List<TvShow>,
-        topRatedTvShows: null == topRatedTvShows
-            ? _value._topRatedTvShows
-            : topRatedTvShows // ignore: cast_nullable_to_non_nullable
                   as List<TvShow>,
       ),
     );
@@ -588,12 +396,18 @@ class __$$LoadedImplCopyWithImpl<$Res>
 
 class _$LoadedImpl implements _Loaded {
   const _$LoadedImpl({
+    required final List<Movie> movies,
     required final List<TvShow> tvShows,
-    required final List<TvShow> popularTvShows,
-    required final List<TvShow> topRatedTvShows,
-  }) : _tvShows = tvShows,
-       _popularTvShows = popularTvShows,
-       _topRatedTvShows = topRatedTvShows;
+  }) : _movies = movies,
+       _tvShows = tvShows;
+
+  final List<Movie> _movies;
+  @override
+  List<Movie> get movies {
+    if (_movies is EqualUnmodifiableListView) return _movies;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_movies);
+  }
 
   final List<TvShow> _tvShows;
   @override
@@ -603,25 +417,9 @@ class _$LoadedImpl implements _Loaded {
     return EqualUnmodifiableListView(_tvShows);
   }
 
-  final List<TvShow> _popularTvShows;
-  @override
-  List<TvShow> get popularTvShows {
-    if (_popularTvShows is EqualUnmodifiableListView) return _popularTvShows;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_popularTvShows);
-  }
-
-  final List<TvShow> _topRatedTvShows;
-  @override
-  List<TvShow> get topRatedTvShows {
-    if (_topRatedTvShows is EqualUnmodifiableListView) return _topRatedTvShows;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_topRatedTvShows);
-  }
-
   @override
   String toString() {
-    return 'ListTvState.loaded(tvShows: $tvShows, popularTvShows: $popularTvShows, topRatedTvShows: $topRatedTvShows)';
+    return 'WatchListState.loaded(movies: $movies, tvShows: $tvShows)';
   }
 
   @override
@@ -629,26 +427,18 @@ class _$LoadedImpl implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoadedImpl &&
-            const DeepCollectionEquality().equals(other._tvShows, _tvShows) &&
-            const DeepCollectionEquality().equals(
-              other._popularTvShows,
-              _popularTvShows,
-            ) &&
-            const DeepCollectionEquality().equals(
-              other._topRatedTvShows,
-              _topRatedTvShows,
-            ));
+            const DeepCollectionEquality().equals(other._movies, _movies) &&
+            const DeepCollectionEquality().equals(other._tvShows, _tvShows));
   }
 
   @override
   int get hashCode => Object.hash(
     runtimeType,
+    const DeepCollectionEquality().hash(_movies),
     const DeepCollectionEquality().hash(_tvShows),
-    const DeepCollectionEquality().hash(_popularTvShows),
-    const DeepCollectionEquality().hash(_topRatedTvShows),
   );
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -660,53 +450,35 @@ class _$LoadedImpl implements _Loaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies, List<TvShow> tvShows) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
-    return loaded(tvShows, popularTvShows, topRatedTvShows);
+    return loaded(movies, tvShows);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
-    return loaded?.call(tvShows, popularTvShows, topRatedTvShows);
+    return loaded?.call(movies, tvShows);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
   }) {
     if (loaded != null) {
-      return loaded(tvShows, popularTvShows, topRatedTvShows);
+      return loaded(movies, tvShows);
     }
     return orElse();
   }
@@ -715,7 +487,6 @@ class _$LoadedImpl implements _Loaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
@@ -727,7 +498,6 @@ class _$LoadedImpl implements _Loaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
@@ -739,7 +509,6 @@ class _$LoadedImpl implements _Loaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
@@ -752,18 +521,16 @@ class _$LoadedImpl implements _Loaded {
   }
 }
 
-abstract class _Loaded implements ListTvState {
+abstract class _Loaded implements WatchListState {
   const factory _Loaded({
+    required final List<Movie> movies,
     required final List<TvShow> tvShows,
-    required final List<TvShow> popularTvShows,
-    required final List<TvShow> topRatedTvShows,
   }) = _$LoadedImpl;
 
+  List<Movie> get movies;
   List<TvShow> get tvShows;
-  List<TvShow> get popularTvShows;
-  List<TvShow> get topRatedTvShows;
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$LoadedImplCopyWith<_$LoadedImpl> get copyWith =>
@@ -782,14 +549,14 @@ abstract class _$$ErrorImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorImplCopyWithImpl<$Res>
-    extends _$ListTvStateCopyWithImpl<$Res, _$ErrorImpl>
+    extends _$WatchListStateCopyWithImpl<$Res, _$ErrorImpl>
     implements _$$ErrorImplCopyWith<$Res> {
   __$$ErrorImplCopyWithImpl(
     _$ErrorImpl _value,
     $Res Function(_$ErrorImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
@@ -815,7 +582,7 @@ class _$ErrorImpl implements _Error {
 
   @override
   String toString() {
-    return 'ListTvState.error(message: $message)';
+    return 'WatchListState.error(message: $message)';
   }
 
   @override
@@ -829,7 +596,7 @@ class _$ErrorImpl implements _Error {
   @override
   int get hashCode => Object.hash(runtimeType, message);
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
@@ -841,13 +608,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies, List<TvShow> tvShows) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -858,13 +619,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -875,13 +630,7 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -896,7 +645,6 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
@@ -908,7 +656,6 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
@@ -920,7 +667,6 @@ class _$ErrorImpl implements _Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
@@ -933,12 +679,12 @@ class _$ErrorImpl implements _Error {
   }
 }
 
-abstract class _Error implements ListTvState {
+abstract class _Error implements WatchListState {
   const factory _Error(final String message) = _$ErrorImpl;
 
   String get message;
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
   _$$ErrorImplCopyWith<_$ErrorImpl> get copyWith =>
@@ -955,14 +701,14 @@ abstract class _$$EmptyImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmptyImplCopyWithImpl<$Res>
-    extends _$ListTvStateCopyWithImpl<$Res, _$EmptyImpl>
+    extends _$WatchListStateCopyWithImpl<$Res, _$EmptyImpl>
     implements _$$EmptyImplCopyWith<$Res> {
   __$$EmptyImplCopyWithImpl(
     _$EmptyImpl _value,
     $Res Function(_$EmptyImpl) _then,
   ) : super(_value, _then);
 
-  /// Create a copy of ListTvState
+  /// Create a copy of WatchListState
   /// with the given fields replaced by the non-null parameter values.
 }
 
@@ -973,7 +719,7 @@ class _$EmptyImpl implements _Empty {
 
   @override
   String toString() {
-    return 'ListTvState.empty()';
+    return 'WatchListState.empty()';
   }
 
   @override
@@ -989,13 +735,7 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function() loading,
-    required TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )
-    loaded,
+    required TResult Function(List<Movie> movies, List<TvShow> tvShows) loaded,
     required TResult Function(String message) error,
     required TResult Function() empty,
   }) {
@@ -1006,13 +746,7 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function()? loading,
-    TResult? Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult? Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult? Function(String message)? error,
     TResult? Function()? empty,
   }) {
@@ -1023,13 +757,7 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(
-      List<TvShow> tvShows,
-      List<TvShow> popularTvShows,
-      List<TvShow> topRatedTvShows,
-    )?
-    loaded,
+    TResult Function(List<Movie> movies, List<TvShow> tvShows)? loaded,
     TResult Function(String message)? error,
     TResult Function()? empty,
     required TResult orElse(),
@@ -1044,7 +772,6 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Loading value) loading,
     required TResult Function(_Loaded value) loaded,
     required TResult Function(_Error value) error,
     required TResult Function(_Empty value) empty,
@@ -1056,7 +783,6 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Initial value)? initial,
-    TResult? Function(_Loading value)? loading,
     TResult? Function(_Loaded value)? loaded,
     TResult? Function(_Error value)? error,
     TResult? Function(_Empty value)? empty,
@@ -1068,7 +794,6 @@ class _$EmptyImpl implements _Empty {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
     TResult Function(_Loaded value)? loaded,
     TResult Function(_Error value)? error,
     TResult Function(_Empty value)? empty,
@@ -1081,6 +806,6 @@ class _$EmptyImpl implements _Empty {
   }
 }
 
-abstract class _Empty implements ListTvState {
+abstract class _Empty implements WatchListState {
   const factory _Empty() = _$EmptyImpl;
 }

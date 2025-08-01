@@ -14,10 +14,14 @@ class DatabaseHelper {
   static Database? _database;
 
   Future<Database?> get database async {
+    await initialize();
+    return _database;
+  }
+
+  Future<void> initialize() async {
     if (_database == null) {
       _database = await _initDb();
     }
-    return _database;
   }
 
   static const String _tblWatchlist = 'watchlist';

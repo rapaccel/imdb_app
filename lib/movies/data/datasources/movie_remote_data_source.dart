@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:imdb_app/common/exception.dart';
 import 'package:imdb_app/movies/data/models/movie_detail_model.dart';
 import 'package:imdb_app/movies/data/models/movie_model.dart';
@@ -38,7 +36,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     final response = await dio.get('$BASE_URL/movie/$id?$API_KEY');
 
     if (response.statusCode == 200) {
-      return MovieDetailResponse.fromJson(jsonDecode(response.data));
+      return MovieDetailResponse.fromJson(response.data);
     } else {
       throw ServerException();
     }
@@ -51,7 +49,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     );
 
     if (response.statusCode == 200) {
-      return MovieResponse.fromJson(jsonDecode(response.data)).movieList;
+      return MovieResponse.fromJson(response.data).movieList;
     } else {
       throw ServerException();
     }
@@ -62,7 +60,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     final response = await dio.get('$BASE_URL/movie/popular?$API_KEY');
 
     if (response.statusCode == 200) {
-      return MovieResponse.fromJson(jsonDecode(response.data)).movieList;
+      return MovieResponse.fromJson(response.data).movieList;
     } else {
       throw ServerException();
     }
@@ -73,7 +71,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     final response = await dio.get('$BASE_URL/movie/top_rated?$API_KEY');
 
     if (response.statusCode == 200) {
-      return MovieResponse.fromJson(jsonDecode(response.data)).movieList;
+      return MovieResponse.fromJson(response.data).movieList;
     } else {
       throw ServerException();
     }
@@ -86,7 +84,7 @@ class MovieRemoteDataSourceImpl implements MovieRemoteDataSource {
     );
 
     if (response.statusCode == 200) {
-      return MovieResponse.fromJson(jsonDecode(response.data)).movieList;
+      return MovieResponse.fromJson(response.data).movieList;
     } else {
       throw ServerException();
     }
