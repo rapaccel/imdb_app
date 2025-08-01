@@ -23,7 +23,11 @@ A Flutter application that allows users to browse, search, and bookmark movies a
 
 ## 📱 Screenshots
 
-![](screenshoots/ss1.jpeg) | ![](screenshoots/ss2.jpeg) | ![](screenshoots/ss3.jpeg)
+<p>
+  <img src="screenshoots/ss1.jpeg" alt="Home" width="250"/>
+  <img src="screenshoots/ss2.jpeg" alt="Detail" width="250"/>
+  <img src="screenshoots/ss3.jpeg" alt="Watchlist" width="250"/>
+</p>
 
 ---
 
