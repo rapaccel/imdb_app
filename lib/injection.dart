@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:imdb_app/common/constatns.dart';
 import 'package:imdb_app/movies/data/datasources/db/database_helper.dart';
 import 'package:imdb_app/movies/data/datasources/movie_local_data_source.dart';
 import 'package:imdb_app/movies/data/datasources/movie_remote_data_source.dart';
@@ -90,7 +91,16 @@ Future<void> init() async {
   );
 
   // data sources
-  locator.registerLazySingleton(() => Dio());
+  locator.registerLazySingleton(
+    () => Dio(
+      BaseOptions(
+        headers: {
+          'Authorization': 'Bearer $API_KEY',
+          'Content-Type': 'application/json',
+        },
+      ),
+    ),
+  );
   locator.registerLazySingleton<MovieRemoteDataSource>(
     () => MovieRemoteDataSourceImpl(dio: locator()),
   );

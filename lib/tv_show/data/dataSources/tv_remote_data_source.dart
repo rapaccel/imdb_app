@@ -14,7 +14,6 @@ abstract class TvRemoteDataSource {
 }
 
 class TvRemoteDataSourceImpl implements TvRemoteDataSource {
-  static const API_KEY = 'api_key=2174d146bb9c0eab47529b2e77d6b526';
   static const BASE_URL = 'https://api.themoviedb.org/3';
 
   final Dio dio;
@@ -22,7 +21,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<List<TvModel>> getOnTheAirTvShows() async {
-    final response = await dio.get('$BASE_URL/tv/on_the_air?$API_KEY');
+    final response = await dio.get('$BASE_URL/tv/on_the_air');
     if (response.statusCode == 200) {
       return TvResponse.fromJson(response.data).movieList;
     } else {
@@ -32,7 +31,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<List<TvModel>> getPopularTvShows() async {
-    final response = await dio.get('$BASE_URL/tv/popular?$API_KEY');
+    final response = await dio.get('$BASE_URL/tv/popular');
     if (response.statusCode == 200) {
       return TvResponse.fromJson(response.data).movieList;
     } else {
@@ -42,7 +41,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<List<TvModel>> getTopRatedTvShows() async {
-    final response = await dio.get('$BASE_URL/tv/top_rated?$API_KEY');
+    final response = await dio.get('$BASE_URL/tv/top_rated');
     if (response.statusCode == 200) {
       return TvResponse.fromJson(response.data).movieList;
     } else {
@@ -52,7 +51,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<List<TvModel>> getTvShowRecommendations(int id) async {
-    final response = await dio.get('$BASE_URL/tv/$id/recommendations?$API_KEY');
+    final response = await dio.get('$BASE_URL/tv/$id/recommendations');
     if (response.statusCode == 200) {
       return TvResponse.fromJson(response.data).movieList;
     } else {
@@ -62,7 +61,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<List<TvModel>> searchTvShows(String query) async {
-    final response = await dio.get('$BASE_URL/search/tv?$API_KEY&query=$query');
+    final response = await dio.get('$BASE_URL/search/tv?query=$query');
     if (response.statusCode == 200) {
       return TvResponse.fromJson(response.data).movieList;
     } else {
@@ -72,7 +71,7 @@ class TvRemoteDataSourceImpl implements TvRemoteDataSource {
 
   @override
   Future<TvDetailResponse> getTvShowDetail(int id) async {
-    final response = await dio.get('$BASE_URL/tv/$id?$API_KEY');
+    final response = await dio.get('$BASE_URL/tv/$id');
     if (response.statusCode == 200) {
       return TvDetailResponse.fromJson(response.data);
     } else {
