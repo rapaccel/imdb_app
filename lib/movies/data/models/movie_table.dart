@@ -1,6 +1,8 @@
 import 'package:equatable/equatable.dart';
 import 'package:imdb_app/movies/domain/entities/movie.dart';
 import 'package:imdb_app/movies/domain/entities/movie_detail.dart';
+import 'package:imdb_app/tv_show/domain/entities/tv_show.dart';
+import 'package:imdb_app/tv_show/domain/entities/tv_show_detail.dart';
 
 import 'movie_model.dart';
 
@@ -27,13 +29,13 @@ class MovieTable extends Equatable {
     type: "movie",
   );
 
-  // factory MovieTable.fromTvEntity(TvShowDetail tvShow) => MovieTable(
-  //       id: tvShow.id,
-  //       title: tvShow.name,
-  //       posterPath: tvShow.posterPath,
-  //       overview: tvShow.overview,
-  //       type: "tv_show",
-  //     );
+  factory MovieTable.fromTvEntity(TvShowDetail tvShow) => MovieTable(
+    id: tvShow.id,
+    title: tvShow.name,
+    posterPath: tvShow.posterPath,
+    overview: tvShow.overview,
+    type: "tv_show",
+  );
 
   factory MovieTable.fromMap(Map<String, dynamic> map) => MovieTable(
     id: map['id'],
@@ -73,13 +75,13 @@ class MovieTable extends Equatable {
     type: type,
   );
 
-  // TvShow toTvShowEntity() => TvShow.watchlist(
-  //       id: id,
-  //       overview: overview ?? '',
-  //       posterPath: posterPath ?? '',
-  //       name: title ?? '',
-  //       type: type,
-  //     );
+  TvShow toTvShowEntity() => TvShow.watchlist(
+    id: id,
+    overview: overview ?? '',
+    posterPath: posterPath ?? '',
+    name: title ?? '',
+    type: type,
+  );
 
   @override
   // TODO: implement props

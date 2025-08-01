@@ -1,4 +1,5 @@
 import 'package:equatable/equatable.dart';
+import 'package:imdb_app/tv_show/domain/entities/tv_show.dart';
 
 class Movie extends Equatable {
   Movie({
@@ -36,15 +37,15 @@ class Movie extends Equatable {
     );
   }
 
-  // TvShow toTvShow() {
-  //   return TvShow.watchlist(
-  //     id: id,
-  //     name: title!,
-  //     overview: overview!,
-  //     posterPath: posterPath,
-  //     type: type,
-  //   );
-  // }
+  TvShow toTvShow() {
+    return TvShow.watchlist(
+      id: id,
+      name: title!,
+      overview: overview!,
+      posterPath: posterPath,
+      type: type,
+    );
+  }
 
   bool? adult;
   String? backdropPath;

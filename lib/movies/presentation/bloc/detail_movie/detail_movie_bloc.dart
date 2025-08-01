@@ -2,11 +2,11 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:imdb_app/movies/domain/entities/movie.dart';
 import 'package:imdb_app/movies/domain/entities/movie_detail.dart';
-import 'package:imdb_app/movies/usecases/get_movie_detail.dart';
-import 'package:imdb_app/movies/usecases/get_movie_recommendations.dart';
-import 'package:imdb_app/movies/usecases/get_watchlist_status.dart';
-import 'package:imdb_app/movies/usecases/remove_watchlist.dart';
-import 'package:imdb_app/movies/usecases/save_watchlist.dart';
+import 'package:imdb_app/movies/domain/usecases/get_movie_detail.dart';
+import 'package:imdb_app/movies/domain/usecases/get_movie_recommendations.dart';
+import 'package:imdb_app/movies/domain/usecases/get_watchlist_status.dart';
+import 'package:imdb_app/movies/domain/usecases/remove_watchlist.dart';
+import 'package:imdb_app/movies/domain/usecases/save_watchlist.dart';
 
 part 'detail_movie_event.dart';
 part 'detail_movie_state.dart';

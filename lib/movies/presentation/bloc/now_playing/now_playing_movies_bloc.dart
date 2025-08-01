@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:imdb_app/movies/domain/entities/movie.dart';
-import 'package:imdb_app/movies/usecases/get_now_playing_movies.dart';
+import 'package:imdb_app/movies/domain/usecases/get_now_playing_movies.dart';
 
 part 'now_playing_movies_event.dart';
 part 'now_playing_movies_state.dart';
